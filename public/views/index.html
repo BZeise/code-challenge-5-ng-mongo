@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="../vendors/angular.min.js" charset="utf-8"></script>
+  <script src="../scripts/commentsApp.js" charset="utf-8"></script>
+  <script src="../scripts/services/comments.service.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles/styles.css">
+
+  <title>MEAN Message Board</title>
+</head>
+<body ng-app="myApp">
+  <header><h1>MEAN Message Board</h1></header>
+  <div class="container" ng-controller="CommentController as cc"  ng-init="cc.showComments()">
+    <div class="col-xs-11 col-xs-offset-1">
+      <input ng-model="cc.nameIn" type="text" placeholder="Your name">
+      <input ng-model="cc.commentIn" type="text" placeholder="What would you like to say?">
+      <button type="button" ng-click="cc.addComment()">Submit</button>
+      <div ng-repeat="post in cc.arrayToShow">
+        <p>{{post.name}}</p>
+        <span>{{post.comment}}</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

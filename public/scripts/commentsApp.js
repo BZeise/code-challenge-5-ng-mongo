@@ -22,6 +22,12 @@ myApp.controller('CommentController', function( CommentService ) {
     }; // end commentToAdd
     // console.log('in vm.addComment, commentToAdd is: ', commentToAdd);
     CommentService.addComment(commentToAdd);
+
+    // empty inputs
+    vm.nameIn = '';
+    vm.commentIn = '';
+
+    // call showComments to display on DOM
     vm.showComments();
   }; // end addComment
 

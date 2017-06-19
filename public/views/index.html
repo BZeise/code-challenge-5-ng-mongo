@@ -18,13 +18,13 @@
 <body ng-app="myApp">
   <header><h1>MEAN Message Board</h1></header>
   <div class="container" ng-controller="CommentController as cc"  ng-init="cc.showComments()">
-    <div class="col-xs-11 col-xs-offset-1">
+    <div class="col-xs-10 col-xs-offset-1">
       <input ng-model="cc.nameIn" type="text" placeholder="Your name">
-      <input ng-model="cc.commentIn" type="text" placeholder="What would you like to say?">
+      <input class="inputMe" ng-model="cc.commentIn" type="text" placeholder="What would you like to say?">
       <button type="button" ng-click="cc.addComment()">Submit</button>
-      <div ng-repeat="post in cc.arrayToShow">
-        <p>{{post.name}}</p>
-        <span>{{post.comment}}</span>
+      <div class="commentDiv" ng-repeat="post in cc.arrayToShow">
+        <span>{{post.name}}</span>
+        <p>{{post.comment}}</p>
       </div>
     </div>
   </div>
